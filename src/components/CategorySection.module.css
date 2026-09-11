@@ -1,19 +1,13 @@
-/* Grid wrapper for the three categories */
+/* Card grid within one category */
 .categoryContainer {
   display: grid;
-  /* Automatically wraps cards to new lines based on screen size */
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
-  padding: 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
 }
-
 
 .title {
   font-size: 1.75rem;
   font-weight: 600;
-  margin: 0 0 4px 0;
+  color: var(--text-h);
+  margin: 0 0 1rem;
 }

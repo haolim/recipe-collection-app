@@ -1,10 +1,6 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import "./App.css";
 import Header from "./components/Header";
-import CategorySection from './components/CategorySection';
+import CategorySection from "./components/CategorySection";
 import RecipeCard from "./components/RecipeCard";
 import Footer from "./components/Footer";
 
@@ -49,7 +45,8 @@ const lunchRecipes = [
       "1/4 cup parmesan cheese",
       "1/3 cup Caesar dressing",
     ],
-    description: "Crisp lettuce and juicy grilled chicken tossed in a classic creamy dressing.",
+    description:
+      "Crisp lettuce and juicy grilled chicken tossed in a classic creamy dressing.",
   },
   {
     name: "Caprese Panini",
@@ -62,7 +59,8 @@ const lunchRecipes = [
       "4-5 fresh basil leaves",
       "2 tbsp basil pesto",
     ],
-    description: "A warm, pressed Italian sandwich with melted mozzarella and fresh tomatoes.",
+    description:
+      "A warm, pressed Italian sandwich with melted mozzarella and fresh tomatoes.",
   },
 ];
 
@@ -78,7 +76,8 @@ const dinnerRecipes = [
       "1/4 cup grated parmesan",
       "2 cups fresh spinach",
     ],
-    description: "Pan-seared salmon smothered in a rich, velvety garlic and spinach cream sauce.",
+    description:
+      "Pan-seared salmon smothered in a rich, velvety garlic and spinach cream sauce.",
   },
   {
     name: "Classic Beef Stir-Fry",
@@ -91,57 +90,57 @@ const dinnerRecipes = [
       "3 tbsp soy sauce",
       "1 tbsp sesame oil",
     ],
-    description: "Tender strips of beef and crisp vegetables tossed in a quick, savory sauce.",
+    description:
+      "Tender strips of beef and crisp vegetables tossed in a quick, savory sauce.",
   },
 ];
 
-
 function App() {
   return (
-    <div>
-      <Header title="My Recipes" subtitle="Breakfast, Lunch, and Dinner"/>
-              
-      <CategorySection category="Breakfast Recipes">
-        {breakfastRecipes.map( (recipe, index) => (
-          <RecipeCard
-                    key={index}
-                    name={recipe.name}
-                    cookingTime={recipe.cookingTime}
-                    difficulty={recipe.difficulty}
-                    ingredients={recipe.ingredients}
-                    description={recipe.description}
-                  />
-        ))}
-      </CategorySection>
-      <CategorySection category="Lunch Recipes">
-        {lunchRecipes.map( (recipe, index) => (
-          <RecipeCard
-                    key={index}
-                    name={recipe.name}
-                    cookingTime={recipe.cookingTime}
-                    difficulty={recipe.difficulty}
-                    ingredients={recipe.ingredients}
-                    description={recipe.description}
-                  />
-        ))}
-      </CategorySection>
-      <CategorySection category="Dinner Recipes">
-        {dinnerRecipes.map( (recipe, index) => (
-          <RecipeCard
-                    key={index}
-                    name={recipe.name}
-                    cookingTime={recipe.cookingTime}
-                    difficulty={recipe.difficulty}
-                    ingredients={recipe.ingredients}
-                    description={recipe.description}
-                  />
-        ))}
-      </CategorySection>
-      <Footer name="ABC"></Footer>
+    <div className="app">
+      <Header title="My Recipes" subtitle="Breakfast, Lunch, and Dinner" />
+      <main className="content">
+        <CategorySection category="Breakfast Recipes">
+          {breakfastRecipes.map((recipe, index) => (
+            <RecipeCard
+              key={index}
+              name={recipe.name}
+              cookingTime={recipe.cookingTime}
+              difficulty={recipe.difficulty}
+              ingredients={recipe.ingredients}
+              description={recipe.description}
+            />
+          ))}
+        </CategorySection>
+        <CategorySection category="Lunch Recipes">
+          {lunchRecipes.map((recipe, index) => (
+            <RecipeCard
+              key={index}
+              name={recipe.name}
+              cookingTime={recipe.cookingTime}
+              difficulty={recipe.difficulty}
+              ingredients={recipe.ingredients}
+              description={recipe.description}
+            />
+          ))}
+        </CategorySection>
+        <CategorySection category="Dinner Recipes">
+          {dinnerRecipes.map((recipe, index) => (
+            <RecipeCard
+              key={index}
+              name={recipe.name}
+              cookingTime={recipe.cookingTime}
+              difficulty={recipe.difficulty}
+              ingredients={recipe.ingredients}
+              description={recipe.description}
+            />
+          ))}
+        </CategorySection>
+      </main>
 
+      <Footer name="ABC"></Footer>
     </div>
   );
+}
 
-};
-
-export default App
+export default App;
